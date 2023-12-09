@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main id="main">
+  <br>
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title chart-section-title">
+        <h2>Cryptocurrencies Price Chart</h2>
+        <p>Track, analyze and get market insights for Bitcoin and over 8000 other coins</p>
+      </div>
+    </div>
+  </section><!-- End About Section -->
+
+ 
+  <section>
+
+    <!-- TradingView Widget BEGIN -->
+    <div class="container">
+      <div class="row justify-content-start">
+        <div>
+          {% comment %} <select name="cars" id="cars" class="btn btn-secondary">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select> {% endcomment %}
+
+        <div class="btn-group chart-button-1">
+          <button type="button" class="btn btn-secondary dropdown-toggle col-2" data-bs-toggle="dropdown" aria-expanded="false" id="select_crypto_button">
+            Cryptocurrencies
+          </button>
+          <ul class="dropdown-menu" id="dropdown-ticker">
+            <li><a class="dropdown-item" value='BTC'>BTC</a></li>
+            <li><a class="dropdown-item" value="ETH">ETH</a></li>
+            <li><a class="dropdown-item" value="LTC">LTC</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Others</a></li>
+          </ul>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="select_exchange_button"> 
+            Exchanges
+          </button>
+          <ul class="dropdown-menu" id="dropdown-exchange">
+            <li><a class="dropdown-item" href="#" value='BINANCE'>Binance</a></li>
+            <li><a class="dropdown-item" href="#" value='BITSTAMP'>Bitstamp</a></li>
+            <li><a class="dropdown-item" href="#" value='COINBASE'>Coinbase</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </div>
+{% comment %} 
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Exchanges
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+         {% endcomment %}
+        
+      </div>
+      <br>
+      <div class="row justify-content-end">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_f94c5"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">Bitcoin chart</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+          <script type="text/javascript">
+          
+          var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+        
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+        
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+          };    
+          
+  
+          var chart_ticker = getUrlParameter('ticker');
+          var chart_exchange = getUrlParameter('exchange')
+          if (chart_ticker == false) {
+            chart_ticker = "BTC"
+          }
+          if (chart_exchange == false) {
+            chart_exchange = "BINANCE"
+        
+          }
+          
+          console.log(chart_ticker)
+
+          new TradingView.widget(
+          {
+          "autosize": true,
+          "symbol": chart_exchange + ":" + chart_ticker + "USD",
+          "interval": "1",
+          "timezone": "Etc/UTC",
+          "theme": "light",
+          "style": "1",
+          "locale": "en",
+          "toolbar_bg": "#f1f3f6",
+          "enable_publishing": false,
+          "allow_symbol_change": true,
+          "container_id": "tradingview_f94c5"
+        }
+          );
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </div>
+      
+      <br>
+      <div class="row justify-content-start">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" class='float-start'>
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">Bitcoin analysis</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+
+
+
+          {
+          "interval": "1m",
+          "width": 500,
+          "isTransparent": false,
+          "height": 500,
+          "symbol": "BITSTAMP:BTCUSD",
+          "showIntervalTabs": true,
+          "locale": "en",
+          "colorTheme": "light"
+        }
+          </script>
+
+        </div>
+        <!-- TradingView Widget END -->
+
+        <div class='col-1'>
+        </div> 
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" class=''>
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP" rel="noopener" target="_blank"><span class="blue-text">Bitcoin fundamentals</span></a> by TradingView</div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+            
+          {
+          "colorTheme": "light",
+          "isTransparent": false,
+          "largeChartUrl": "",
+          "displayMode": "regular",
+          "width": 690,
+          "height": 830,
+          "symbol": "BITSTAMP:BTCUSD",
+          "locale": "en"
+        }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+
+      </div>
+
+    </div>
+  </section>
+
+</main><!-- End #main -->
+<script>
+
+  
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+  };    
+
+  var chart_ticker = getUrlParameter('ticker');
+  var chart_exchange = getUrlParameter('exchange');
+  if (chart_ticker == false) {
+    chart_ticker = "BTC"
+  }
+  if (chart_exchange == false) {
+    chart_exchange = "BINANCE"
+
+  }
+  console.log(chart_ticker)
+  console.log(chart_exchange)
+
+  $("#select_crypto_button").text(chart_ticker);
+  $("#select_exchange_button").text(chart_exchange);
+
+  $(".dropdown-toggle").next(".dropdown-menu").children().on("click",function(){
+      $(this).closest(".dropdown-menu").prev(".dropdown-toggle").text($(this).text());      
+  });
+
+
+  $(document).on('click', '#dropdown-ticker li a', function() {
+    console.log($(this).text())
+
+    var url = "?ticker=" + $(this).attr('value') + "&exchange=" + chart_exchange; // get selected value
+    
+    if (url) { // require a URL
+        window.location = url; // redirect
+    }
+    return false;
+
+  }); 
+
+  $(document).on('click', '#dropdown-exchange li a', function() {
+    console.log($(this).text())
+
+    var url = "?exchange=" + $(this).attr('value') + "&ticker=" + chart_ticker; // get selected value
+    
+    if (url) { // require a URL
+        window.location = url; // redirect
+    }
+    return false;
+
+  }); 
+
+  {% comment %} $(".dropdown-toggle").on("change", function(){
+    document.location.href = $(this).val(); //assuming options have urls's in them
+    console.log($(this).val())
+  }); {% endcomment %}
+
+</script>
+{% endblock content %}

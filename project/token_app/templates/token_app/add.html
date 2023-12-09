@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main id="main">
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title chart-section-title">
+                    <h2>Add Coin</h2>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </section><!-- End About Section -->
+    </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Exchange Reviews</h2>
+    <form method="POST">
+    {% csrf_token %}
+    {% for exchange in exchanges %}
+        <h3>{{ exchange.name }}</h3>
+        <div class="form-group">
+        <label>Rating:</label>
+        <select class="form-control" name="{{ exchange.name }}_rating">
+            <option value="binance">binance</option>
+            <option value="blockchaincom">blockchain.com</option>
+            <option value="currencycom">currency.com</option>
+            <option value="bitcoincom">bitcoin.com</option>
+            <option value="bitpanda">bitpanda</option>
+            <option value="lykke">lykke</option>
+            <option value="hollaex">hollaEx</option>
+            <option value="bitopro">bitopro</option>
+            <option value="coinbasepro">coinbasepro</option>
+            <option value="kraken">kraken</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <label>Comment:</label>
+        <textarea class="form-control" name="{{ exchange.name }}_comment"></textarea>
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+{% endblock content %}

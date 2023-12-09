@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main id="main">
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title chart-section-title">
+                <h2>MetaCrypto</h2>
+                <p>Search result</p>
+            </div>
+        </div>
+    </section><!-- End About Section -->
+</main><!-- End #main -->
+
+<style>
+    table {
+        margin: auto;
+    }
+</style>
+
+{% if coins %}
+    <table>
+        {% comment %} <tr>
+            <th style="width: 20%">Exchanges</th>
+            <th style="width: 20%">Latest Price</th>
+            <th>Details</th>
+        </tr> {% endcomment %}
+        <tbody class="shadow-box">
+            {% for coin in coins %}
+            <section id="portfolio-details" class="portfolio-details">
+                <div class="container">
+                {% if coin.name  == 'binance' %}
+                <div class="card">
+                    
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/binance.png" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+                      <p class="card-text">Binance is one of the largest cryptocurrency exchanges in the 
+                        world in terms of trading volume.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="/review" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.binance.com/en" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'blockchaincom'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/blockchain.png" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Blockchain.com is a platform for buying, selling, and storing 
+                        cryptocurrencies, as well as a provider of blockchain-related data 
+                        and services.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="/review" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.blockchain.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'currencycom'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/currencycom.png" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Currency.com is a regulated cryptocurrency exchange that allows 
+                        trading of cryptocurrencies as well as traditional financial instruments
+                        such as stocks and commodities.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://crypto.com/sg" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://currency.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'bitcoincom'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/bitcoincom.png" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Bitcoin.com is a website that provides a variety of services related to 
+                        Bitcoin and other cryptocurrencies, including a cryptocurrency exchange.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://www.bitcoin.com/" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.bitcoin.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'bitpanda' %}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/bitpanda.png" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Bitpanda is a cryptocurrency exchange based in Europe that offers a wide range of
+                        cryptocurrencies and payment options.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://www.bitpanda.com/en" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.bitpanda.com/en" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'lykke'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/lykke.jpg" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Lykke is a global cryptocurrency exchange that allows users to buy, 
+                        sell, and trade a variety of cryptocurrencies with low fees.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://lykke.com/" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://lykke.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'hollaex'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/hollaex.jpg" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">HollaEx is a cryptocurrency exchange software that enables businesses
+                        to launch their own exchange platforms.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://www.hollaex.com/" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.hollaex.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'bitopro'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/bitopro.jpg" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Bitopro is a cryptocurrency exchange based in Taiwan that offers trading 
+                        of various cryptocurrencies with high security and low fees.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://www.bitopro.com/ns/home" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.bitopro.com/ns/home" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'coinbasepro'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/coinbasepro.jpg" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Coinbase Pro is a popular cryptocurrency exchange in the United States
+                        that offers trading of various cryptocurrencies with low fees.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://pro.coinbase.com/" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://pro.coinbase.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% elif coin.name == 'kraken'%}
+                <div class="card">
+                    <div class="card-header">
+                      <div class="hstack gap-3">
+                        <img src="static/assets/img/crypto logo/kraken.png" alt="" height=30 width=30></img>
+                        <h5>{{ coin.symbol }}</h5>
+                        <div class="vr"></div>
+                        <p><span class="fa fa-star checked style='color: #f3da35' fa-spin fa-pulse fa-1x"></span></p>
+                        
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="text-primary">${{ coin.price }} </h3>
+                      <br>
+        
+                      <p class="card-text">Kraken is a cryptocurrency exchange that allows users to trade a wide 
+                        range of cryptocurrencies with high liquidity and low fees.</p>
+                        <div class="hstack gap-3">
+                            <a class="btn btn-sm btn-outline" href="https://www.kraken.com/" target="_blank">Review Site</a>
+                            <a class="btn btn-sm btn-outline" href="https://www.kraken.com/" target="_blank">Go To Site</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+              </section><!-- End Portfolio Details Section -->
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No coins found.</p>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main id="main">
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title chart-section-title">
+                    <h2>Delete Coin</h2>
+                </div>
+            </div>
+        </section><!-- End About Section -->
+    </main><!-- End #main -->
+
+    <p>Are you sure you want to delete the crypto alert for {{ alert.exchange }} - {{ alert.coin }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'portfolio_view' %}">Cancel</a>
+
+{% endblock %}

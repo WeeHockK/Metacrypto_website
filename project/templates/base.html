@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% include 'snippets/header.html' %} 
+
+<body>
+  <!-- your content here... -->
+  {% block content %}
+  {% endblock content %}
+
+  {% if messages %}
+    <div id="messages-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1030;">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" style="max-width: 500px;">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if messages %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+          var bsAlert = new bootstrap.Alert(alert, { autohide: true, delay: 1000 });
+        });
+      });
+    </script>
+  {% endif %}
+
+</body>
+{% include 'snippets/footer.html' %}
+
+</html>
