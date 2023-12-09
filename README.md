@@ -1,8 +1,8 @@
 # MetaCrypto Website
-Description
+## Description
 MetaCrypto is a Django-based web application focused on providing information and services related to cryptocurrencies. It features a dynamic and responsive design, integrating various cryptocurrency APIs to display real-time data, news, and other relevant information.
 
-Installation
+## Installation
 To set up MetaCrypto on your local machine, follow these steps:
 
 Ensure you have Python and Django installed.
