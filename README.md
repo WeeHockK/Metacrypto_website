@@ -1,4 +1,4 @@
-#MetaCrypto Website
+# MetaCrypto Website
 Description
 MetaCrypto is a Django-based web application focused on providing information and services related to cryptocurrencies. It features a dynamic and responsive design, integrating various cryptocurrency APIs to display real-time data, news, and other relevant information.
 
